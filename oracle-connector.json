@@ -1,0 +1,36 @@
+The below will be used through the Postman for making the connection to the Oracle DB as a "POST" method in the Postman
+URL = "http://localhost:8083/connectors"
+
+{
+  "name": "oracle-sink",
+  "config": {
+    "connector.class": "io.debezium.connector.jdbc.JdbcSinkConnector",
+
+    "topics": "mssql.testdb.dbo.Employees", // "Employees" is the table name
+
+    "connection.url": "jdbc:oracle:thin:@//host.docker.internal:1521/ORCLPDB", // "ORCLPDB" is the service name, "1521" is DB Port
+    "connection.username": "root", //DB User name
+    "connection.password": "Shivalik1234", //DB User password
+    "connection.driver": "oracle.jdbc.OracleDriver",
+
+    "insert.mode": "upsert",
+
+    "table.name.format": "ROOT.EMPLOYEES", //DB User Name and the Table on which we are targeting at
+
+    "auto.create": "false",
+    "auto.evolve": "true",
+    "schema.evolution": "basic",
+    "value.converter.schemas.enable": "false",
+
+
+    "delete.enabled": "true",
+    "primary.key.mode": "record_key",
+
+    "quote.identifiers": "false",
+
+    "transforms": "unwrap",
+    "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState",
+    "transforms.unwrap.delete.handling.mode": "none",
+    "transforms.unwrap.drop.tombstones": "false"
+  }
+}
