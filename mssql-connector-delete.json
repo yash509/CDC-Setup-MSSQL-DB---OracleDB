@@ -1,4 +1,4 @@
-The below will be used through the Postman for deleting the currect pipeline of the Oracle DB connector i.e., "mssql-connector" as a "DELETE" method in the Postman 
+The below will be used through the Postman for deleting the currect pipeline of the MSSQL DB connector i.e., "mssql-connector" as a "DELETE" method in the Postman 
 URL = "http://localhost:8083/connectors/mssql-connector"
 
 
