@@ -8,7 +8,7 @@ URL = "http://localhost:8083/connectors"
     "tasks.max": "1",
 
     "database.hostname": "host.docker.internal",
-    "database.port": "1433",
+    "database.port": "1433", // DB Port
     "database.user": "root", // DB User Name
     "database.password": "Root@123", // DB User Password
     "database.names": "testdb", //DB name
